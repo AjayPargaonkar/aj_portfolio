@@ -1,0 +1,35 @@
+<!-- Work Experience Section with Timeline -->
+<section id="experience" class="section">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Work Experience</h2>
+
+    <div class="timeline">
+      @for (exp of experience; track exp.company; let i = $index) {
+        <div class="timeline-item" data-aos="fade-up" [attr.data-aos-delay]="i * 150">
+          <!-- Timeline Line & Glowing Dot -->
+          <div class="timeline-marker">
+            <div class="timeline-dot"></div>
+            <div class="timeline-line"></div>
+          </div>
+
+          <!-- Experience Card -->
+          <div class="timeline-card">
+            <div class="card-header">
+              <div>
+                <h3 class="role">{{ exp.role }}</h3>
+                <p class="company gradient-text">{{ exp.company }}</p>
+                <p class="location">{{ exp.location }}</p>
+              </div>
+              <span class="period">{{ exp.period }}</span>
+            </div>
+            <ul class="highlights">
+              @for (point of exp.highlights; track point) {
+                <li>{{ point }}</li>
+              }
+            </ul>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

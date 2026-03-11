@@ -1,0 +1,45 @@
+<!-- Featured Projects Section -->
+<section id="projects" class="section">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Featured Projects</h2>
+
+    <div class="projects-grid">
+      @for (project of projects; track project.title; let i = $index) {
+        <div class="project-card" data-aos="fade-up" [attr.data-aos-delay]="i * 150">
+          <!-- Gradient top border -->
+          <div class="card-accent"></div>
+
+          <div class="card-content">
+            <!-- Header with title and badge -->
+            <div class="project-header">
+              <div>
+                <h3 class="project-title">{{ project.title }}</h3>
+                <p class="project-subtitle">{{ project.subtitle }}</p>
+              </div>
+              @if (project.isCurrent) {
+                <span class="badge current">Current</span>
+              }
+            </div>
+
+            <p class="project-role">{{ project.role }} | {{ project.period }}</p>
+            <p class="project-desc">{{ project.description }}</p>
+
+            <!-- Key Highlights -->
+            <ul class="project-highlights">
+              @for (h of project.highlights; track h) {
+                <li>{{ h }}</li>
+              }
+            </ul>
+
+            <!-- Tech Stack Tags -->
+            <div class="tech-stack">
+              @for (tech of project.techStack; track tech) {
+                <span class="tech-tag">{{ tech }}</span>
+              }
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

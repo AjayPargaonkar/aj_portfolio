@@ -1,0 +1,58 @@
+<!-- Contact Section -->
+<section id="contact" class="section">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
+
+    <div class="contact-grid">
+      <!-- Contact Info Cards -->
+      <div class="contact-info" data-aos="fade-right">
+        <p class="contact-intro">
+          I'm always open to discussing new projects, creative ideas,
+          or opportunities to be part of your vision.
+        </p>
+
+        @for (info of contactInfo; track info.label) {
+          <div class="info-card">
+            <span class="info-icon">{{ info.icon }}</span>
+            <div>
+              <p class="info-label">{{ info.label }}</p>
+              @if (info.link) {
+                <a [href]="info.link" class="info-value">{{ info.value }}</a>
+              } @else {
+                <p class="info-value">{{ info.value }}</p>
+              }
+            </div>
+          </div>
+        }
+      </div>
+
+      <!-- Contact Form -->
+      <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()" data-aos="fade-left">
+        <div class="form-group">
+          <input type="text" formControlName="name" placeholder="Your Name" class="form-input">
+        </div>
+        <div class="form-group">
+          <input type="email" formControlName="email" placeholder="Your Email" class="form-input">
+        </div>
+        <div class="form-group">
+          <input type="text" formControlName="subject" placeholder="Subject" class="form-input">
+        </div>
+        <div class="form-group">
+          <textarea formControlName="message" placeholder="Your Message" rows="5" class="form-input"></textarea>
+        </div>
+
+        @if (submitted()) {
+          <div class="success-message">Message sent successfully!</div>
+        }
+
+        <button type="submit" class="btn-primary submit-btn" [disabled]="contactForm.invalid">
+          Send Message
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="22" y1="2" x2="11" y2="13"/>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>

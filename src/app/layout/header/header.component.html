@@ -1,0 +1,29 @@
+<!-- Navigation Header with Glassmorphism Effect -->
+<header [class.scrolled]="isScrolled()">
+  <nav class="container nav-container">
+    <!-- Logo / Brand -->
+    <a class="logo" (click)="scrollTo('home')">
+      <span class="logo-text gradient-text">AP</span>
+    </a>
+
+    <!-- Desktop Navigation Links -->
+    <ul class="nav-links" [class.active]="isMenuOpen()">
+      @for (link of navLinks; track link.target) {
+        <li>
+          <a (click)="scrollTo(link.target)">{{ link.label }}</a>
+        </li>
+      }
+    </ul>
+
+    <!-- Mobile Hamburger Toggle -->
+    <button
+      class="hamburger"
+      [class.open]="isMenuOpen()"
+      (click)="toggleMenu()"
+      aria-label="Toggle navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+</header>

@@ -1,0 +1,39 @@
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Quick Links</h4>
+        @for (link of quickLinks; track link.target) {
+          <a class="footer-link" (click)="scrollTo(link.target)">{{ link.label }}</a>
+        }
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Contact</h4>
+        <a class="footer-link" [href]="'mailto:' + email">{{ email }}</a>
+        <a class="footer-link" [href]="'tel:' + phone">{{ phone }}</a>
+        <p class="footer-text">{{ location }}</p>
+      </div>
+
+      <!-- Brand & Scroll Top -->
+      <div class="footer-col footer-brand">
+        <span class="footer-logo gradient-text">AP</span>
+        <p class="footer-text">Building scalable solutions with passion and precision.</p>
+        <button class="scroll-top-btn" (click)="scrollToTop()" aria-label="Scroll to top">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="18 15 12 9 6 15"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-bottom">
+      <p>&copy; {{ currentYear }} Ajay Pargaonkar. All rights reserved.</p>
+      <p class="designed-by">Designed & Built by <span class="gradient-text">Ajay Pargaonkar</span></p>
+    </div>
+  </div>
+</footer>

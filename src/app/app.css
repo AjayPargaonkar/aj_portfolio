@@ -1,0 +1,15 @@
+/**
+ * App Root Styles
+ * ===============
+ * Minimal root-level styles. Section-specific styles
+ * are encapsulated in their respective components.
+ */
+:host {
+  display: block;
+  min-height: 100vh;
+  background: var(--bg-primary);
+}
+
+main {
+  overflow-x: hidden;
+}

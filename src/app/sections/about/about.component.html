@@ -1,0 +1,46 @@
+<!-- About Me Section -->
+<section id="about" class="section">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">About Me</h2>
+
+    <div class="about-grid">
+      <!-- Stats Cards -->
+      <div class="stats-grid" data-aos="fade-right" data-aos-duration="800">
+        @for (stat of stats(); track stat.label; let i = $index) {
+          <div class="stat-card" [attr.data-aos]="'zoom-in'" [attr.data-aos-delay]="i * 100">
+            <div class="stat-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path [attr.d]="stat.icon"/>
+              </svg>
+            </div>
+            <span class="stat-value gradient-text">{{ stat.value }}</span>
+            <span class="stat-label">{{ stat.label }}</span>
+          </div>
+        }
+      </div>
+
+      <!-- About Text -->
+      <div class="about-text" data-aos="fade-left" data-aos-duration="800">
+        <h3>Senior Software Engineer at <span class="gradient-text">Thinkitive Technologies</span></h3>
+        <p>
+          I'm a Java Full Stack Developer based in Pune, India, with over 3 years of experience
+          building enterprise-grade healthcare platforms. I specialize in designing scalable
+          microservices architectures and multi-tenant systems that serve thousands of users.
+        </p>
+        <p>
+          My expertise spans the full stack — from crafting robust backend services with
+          <strong>Spring Boot</strong> and <strong>Hibernate</strong> to building responsive
+          frontends with <strong>Angular</strong>. I've led backend architecture for European
+          healthcare platforms, implementing features like real-time nurse broadcasting with
+          Redis Geo and high-volume async processing with RabbitMQ.
+        </p>
+        <p>
+          I'm passionate about writing clean, performant code and have consistently delivered
+          <strong>40–60% performance improvements</strong> through SQL optimization, caching strategies,
+          and efficient schema design. Security is always a priority — I work extensively with
+          Keycloak, JWT, and HIPAA-compliant architectures.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

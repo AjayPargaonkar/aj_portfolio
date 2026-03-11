@@ -1,0 +1,16 @@
+<!-- Achievements & Certifications Section -->
+<section id="achievements" class="section">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Achievements & Certifications</h2>
+
+    <div class="achievements-grid">
+      @for (a of achievements; track a.title; let i = $index) {
+        <div class="achievement-card" data-aos="zoom-in" [attr.data-aos-delay]="i * 150">
+          <div class="achievement-icon">{{ a.icon }}</div>
+          <h3 class="achievement-title">{{ a.title }}</h3>
+          <p class="achievement-desc">{{ a.description }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,21 @@
+<!-- Education Section -->
+<section id="education" class="section">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Education</h2>
+
+    <div class="education-grid">
+      @for (edu of education; track edu.degree; let i = $index) {
+        <div class="edu-card" data-aos="fade-up" [attr.data-aos-delay]="i * 150">
+          <div class="edu-icon">🎓</div>
+          <h3 class="edu-degree">{{ edu.degree }}</h3>
+          <p class="edu-institution">{{ edu.institution }}</p>
+          <p class="edu-period">{{ edu.period }}</p>
+          <div class="edu-score">
+            <span class="score-label">Score</span>
+            <span class="score-value gradient-text">{{ edu.score }}</span>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

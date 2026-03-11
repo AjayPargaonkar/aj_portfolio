@@ -1,0 +1,20 @@
+<!-- Technical Skills Section -->
+<section id="skills" class="section">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Technical Skills</h2>
+
+    <div class="skills-grid">
+      @for (category of skills; track category.title; let i = $index) {
+        <div class="skill-card" data-aos="fade-up" [attr.data-aos-delay]="i * 80">
+          <div class="skill-icon">{{ category.icon }}</div>
+          <h3 class="skill-title">{{ category.title }}</h3>
+          <div class="skill-tags">
+            @for (skill of category.skills; track skill) {
+              <span class="skill-tag">{{ skill }}</span>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,135 @@
+<!-- Hero Section: Full viewport with animated background -->
+<section id="home" class="hero">
+  <!-- Animated gradient background -->
+  <div class="hero-bg"></div>
+
+  <!-- Animated floating particles (CSS only) -->
+  <div class="particles">
+    <span class="particle particle-1"></span>
+    <span class="particle particle-2"></span>
+    <span class="particle particle-3"></span>
+    <span class="particle particle-4"></span>
+    <span class="particle particle-5"></span>
+    <span class="particle particle-6"></span>
+    <span class="particle particle-7"></span>
+    <span class="particle particle-8"></span>
+  </div>
+
+  <div class="container hero-content">
+    <!-- Left: Text Content -->
+    <div class="hero-text" data-aos="fade-right" data-aos-duration="1000">
+      <p class="greeting">Hello, I'm</p>
+      <h1 class="name gradient-text">{{ name }}</h1>
+      <div class="role-wrapper">
+        <span class="role-prefix">I'm a </span>
+        <span class="typed-role">{{ typedText() }}</span>
+        <span class="cursor" [class.blink]="showCursor()">|</span>
+      </div>
+      <p class="intro">
+        Passionate about building scalable, high-performance applications
+        with modern Java and Angular ecosystems. I craft clean, maintainable
+        solutions that drive real business impact.
+      </p>
+      <div class="cta-buttons">
+        <button class="btn-primary" (click)="scrollTo('projects')">
+          <span>View My Work</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </button>
+        <a class="btn-outline" [href]="resumePath" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          <span>Download Resume</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Right: Code Visual -->
+    <div class="hero-visual" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+      <div class="code-window">
+        <div class="code-header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="code-title">Developer.java</span>
+        </div>
+        <div class="code-body">
+          <div class="code-line">
+            <span class="line-num">1</span>
+            <span class="keyword">public class</span> <span class="class-name">Developer</span> &#123;
+          </div>
+          <div class="code-line">
+            <span class="line-num">2</span>
+            <span class="indent"></span><span class="keyword">private</span> <span class="type">String</span> name <span class="operator">=</span> <span class="string">"Ajay"</span>;
+          </div>
+          <div class="code-line">
+            <span class="line-num">3</span>
+            <span class="indent"></span><span class="keyword">private</span> <span class="type">String</span> role <span class="operator">=</span> <span class="string">"Full Stack"</span>;
+          </div>
+          <div class="code-line">
+            <span class="line-num">4</span>
+          </div>
+          <div class="code-line">
+            <span class="line-num">5</span>
+            <span class="indent"></span><span class="annotation">&#64;Autowired</span>
+          </div>
+          <div class="code-line">
+            <span class="line-num">6</span>
+            <span class="indent"></span><span class="keyword">private</span> <span class="type">Passion</span> passion;
+          </div>
+          <div class="code-line">
+            <span class="line-num">7</span>
+          </div>
+          <div class="code-line">
+            <span class="line-num">8</span>
+            <span class="indent"></span><span class="keyword">public</span> <span class="type">Solution</span> <span class="method">build</span>() &#123;
+          </div>
+          <div class="code-line">
+            <span class="line-num">9</span>
+            <span class="indent-2"></span><span class="keyword">return</span> <span class="type">Solution</span>.<span class="method">builder</span>()
+          </div>
+          <div class="code-line">
+            <span class="line-num">10</span>
+            <span class="indent-3"></span>.<span class="method">scalable</span>(<span class="keyword">true</span>)
+          </div>
+          <div class="code-line">
+            <span class="line-num">11</span>
+            <span class="indent-3"></span>.<span class="method">clean</span>(<span class="keyword">true</span>)
+          </div>
+          <div class="code-line">
+            <span class="line-num">12</span>
+            <span class="indent-3"></span>.<span class="method">build</span>();
+          </div>
+          <div class="code-line">
+            <span class="line-num">13</span>
+            <span class="indent"></span>&#125;
+          </div>
+          <div class="code-line">
+            <span class="line-num">14</span>
+            &#125;
+          </div>
+        </div>
+      </div>
+
+      <!-- Geometric decorations -->
+      <div class="geo geo-1"></div>
+      <div class="geo geo-2"></div>
+      <div class="geo geo-3"></div>
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="600">
+    <span class="scroll-text">Scroll Down</span>
+    <div class="scroll-arrow">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"/>
+      </svg>
+    </div>
+  </div>
+</section>
